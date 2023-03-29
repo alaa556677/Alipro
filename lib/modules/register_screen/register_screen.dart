@@ -1,5 +1,10 @@
 import 'package:alipro/modules/activation_code/activation_code.dart';
 import 'package:alipro/shared/components/component.dart';
+import 'package:alipro/shared/components/widgets/appbar.dart';
+import 'package:alipro/shared/components/widgets/button.dart';
+import 'package:alipro/shared/components/widgets/phone_number.dart';
+import 'package:alipro/shared/components/widgets/text.dart';
+import 'package:alipro/shared/components/widgets/text_form_field.dart';
 import 'package:alipro/shared/cubit/login/login_cubit.dart';
 import 'package:alipro/shared/cubit/register/register_cubit.dart';
 import 'package:alipro/shared/cubit/register/register_states.dart';
@@ -27,7 +32,7 @@ class RegisterScreen extends StatelessWidget {
           child: Scaffold(
             appBar: AppBar(
               automaticallyImplyLeading: false,
-              title: defaultAppBar(),
+              title: const DefaultAppbar(),
             ),
             body: Center(
               child: SingleChildScrollView(
@@ -39,53 +44,54 @@ class RegisterScreen extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        defaultText(
+                        DefaultText(
                           title: 'الاسم',
                         ),
                         const SizedBox(
                           height: 5,
                         ),
-                        defaultTextFormField(
-                          type: TextInputType.text,
-                          controller: nameController,
-                          hint: 'ادخل الاسم',
-                          validate: (value) {
-                            if (value.isEmpty) {
-                              return 'يجب كتابة الاسم';
-                            }
-                            return null;
-                          },
-                          prefix: Icons.person,
-                          colorPrefix: Colors.grey,
-                          radius: 15,
-                          colorInputText: Colors.black,
-                          colorHint: Colors.grey
+                        DefaultTextFormField(
+                            type: TextInputType.text,
+                            controller: nameController,
+                            hint: 'ادخل الاسم',
+                            validate: (value) {
+                              if (value.isEmpty) {
+                                return 'يجب كتابة الاسم';
+                              }
+                              return null;
+                            },
+                            prefix: Icons.person,
+                            colorPrefix: Colors.grey,
+                            radius: 15,
+                            colorInputText: Colors.black,
+                            colorHint: Colors.grey
                         ),
                         const SizedBox(
                           height: 15,
                         ),
-                        defaultText(
+                        DefaultText(
                           title: 'رقم الموبايل',
                         ),
                         const SizedBox(
                           height: 5,
                         ),
-                        defaultPhoneNumber(
+                        DefaultPhoneNumber(
+                            context: context,
                           number: number,
                           controller: phoneController,
-                            vertical: 9,
-                            horizontal: 10
+                          vertical: 9,
+                          horizontal: 10,
                         ),
                         const SizedBox(
                           height: 15,
                         ),
-                        defaultText(
+                        DefaultText(
                           title: 'رقم البطاقة',
                         ),
                         const SizedBox(
                           height: 5,
                         ),
-                        defaultTextFormField(
+                        DefaultTextFormField(
                           type: TextInputType.number,
                           controller: idController,
                           hint: 'ادخل رقم البطاقة',
@@ -98,13 +104,13 @@ class RegisterScreen extends StatelessWidget {
                         const SizedBox(
                           height: 15,
                         ),
-                        defaultText(
+                        DefaultText(
                           title: 'الرقم السري',
                         ),
                         const SizedBox(
                           height: 5,
                         ),
-                        defaultTextFormField(
+                        DefaultTextFormField(
                           type: TextInputType.text,
                           controller: passwordController,
                           hint: 'ادخل الرقم السري',
@@ -125,13 +131,13 @@ class RegisterScreen extends StatelessWidget {
                         const SizedBox(
                           height: 15,
                         ),
-                        defaultText(
+                        DefaultText(
                           title: 'إعادة كتابة الرقم السري',
                         ),
                         const SizedBox(
                           height: 5,
                         ),
-                        defaultTextFormField(
+                        DefaultTextFormField(
                           type: TextInputType.text,
                           controller: passwordController,
                           hint: 'ادخل الرقم السري',
@@ -153,7 +159,7 @@ class RegisterScreen extends StatelessWidget {
                           height: 30,
                         ),
                         Center(
-                          child: defaultButton(
+                          child: DefaultButton(
                               text: 'تسجيل',
                               width: 180,
                               radius: 25,

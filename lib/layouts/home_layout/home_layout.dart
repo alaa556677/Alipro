@@ -1,4 +1,5 @@
 import 'package:alipro/shared/components/component.dart';
+import 'package:alipro/shared/components/widgets/appbar.dart';
 import 'package:alipro/shared/cubit/home/home_cubit.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +18,7 @@ class HomeScreen extends StatelessWidget{
           key: homeCubit.scaffoldKey,
           appBar: AppBar(
             automaticallyImplyLeading: false,
-            title: defaultAppBar(),
+            title: DefaultAppbar(),
           ),
           bottomNavigationBar: BottomNavigationBar(
             items:[

@@ -1,7 +1,14 @@
 import 'package:alipro/layouts/home_layout/home_layout.dart';
+import 'package:alipro/modules/activation_code/activation_code.dart';
 import 'package:alipro/modules/product_screen/product_screen.dart';
 import 'package:alipro/modules/register_screen/register_screen.dart';
 import 'package:alipro/shared/components/component.dart';
+import 'package:alipro/shared/components/widgets/appbar.dart';
+import 'package:alipro/shared/components/widgets/button.dart';
+import 'package:alipro/shared/components/widgets/phone_number.dart';
+import 'package:alipro/shared/components/widgets/text.dart';
+import 'package:alipro/shared/components/widgets/text_button.dart';
+import 'package:alipro/shared/components/widgets/text_form_field.dart';
 import 'package:alipro/shared/cubit/login/login_cubit.dart';
 import 'package:alipro/shared/cubit/login/login_states.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -26,7 +33,7 @@ class LoginScreen extends StatelessWidget{
         return Scaffold(
           appBar: AppBar(
             automaticallyImplyLeading: false,
-            title: defaultAppBar(),
+            title: const DefaultAppbar(),
           ),
           body: Center(
             child: SingleChildScrollView(
@@ -38,42 +45,43 @@ class LoginScreen extends StatelessWidget{
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      defaultText(
+                      DefaultText(
                         title: "name".tr().toString(),
                       ),
                       const SizedBox(height: 10,),
-                      defaultTextFormField(
+                      DefaultTextFormField(
                         type: TextInputType.text,
-                        controller: nameController,
-                        hint: "hintName".tr().toString(),
-                        validate: (value){
-                          if(value.isEmpty){
-                            return "validateName".tr().toString();
-                          }
-                          return null;
-                        },
-                        prefix: Icons.person,
-                        colorInputText: Colors.black,
-                        colorBorderFocus: Colors.red,
-                        colorPrefix: Colors.grey,
-                        colorHint: Colors.grey,
-                        radius: 15,
-                        containerHeight: 50
+                          controller: nameController,
+                          hint: "hintName".tr().toString(),
+                          validate: (value){
+                            if(value.isEmpty){
+                              return "validateName".tr().toString();
+                            }
+                            return null;
+                          },
+                          prefix: Icons.person,
+                          colorInputText: Colors.black,
+                          colorBorderFocus: Colors.red,
+                          colorPrefix: Colors.grey,
+                          colorHint: Colors.grey,
+                          radius: 15,
+                          containerHeight: 50
                       ),
                       const SizedBox(height: 20,),
-                      defaultText(
+                      DefaultText(
                         title: "phone".tr().toString(),
                       ),
                       const SizedBox(height: 10,),
-                      defaultPhoneNumber(
-                        controller: phoneController,
+                      DefaultPhoneNumber(
+                        context: context,
+                        controller:phoneController,
                         number: number,
-                        vertical: 9,
-                        horizontal: 10
+                        vertical: 11,
+                        horizontal: 10,
                       ),
                       const SizedBox(height: 60,),
                       Center(
-                        child: defaultButton(
+                        child: DefaultButton(
                           text:  "buttonLogin".tr().toString(),
                           width: 180,
                           radius: 25,
@@ -82,7 +90,7 @@ class LoginScreen extends StatelessWidget{
                           press: (){
                             Navigator.pushNamed(
                                 context,
-                                HomeScreen.id
+                                ActivationScreen.id
                             );
                           },
                         ),
@@ -91,12 +99,12 @@ class LoginScreen extends StatelessWidget{
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          defaultText(
+                          DefaultText(
                             title:  "isHaveAccount".tr().toString(),
                             size: 20
                           ),
                           const SizedBox(width: 10,),
-                          defaultTextButton(
+                          DefaultTextButton(
                             text:  "register".tr().toString(),
                             size: 20,
                             color: Colors.red,

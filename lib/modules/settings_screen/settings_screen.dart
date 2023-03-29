@@ -1,5 +1,8 @@
 import 'package:alipro/modules/create_codes/create_codes.dart';
 import 'package:alipro/shared/components/component.dart';
+import 'package:alipro/shared/components/widgets/button.dart';
+import 'package:alipro/shared/components/widgets/text.dart';
+import 'package:alipro/shared/components/widgets/text_form_field.dart';
 import 'package:alipro/shared/cubit/login/login_cubit.dart';
 import 'package:alipro/shared/cubit/login/login_states.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -14,6 +17,7 @@ class SettingsScreen extends StatelessWidget{
   TextEditingController nameController = TextEditingController();
   TextEditingController descriptionController = TextEditingController();
   TextEditingController priceController = TextEditingController();
+  SettingsScreen({super.key});
   @override
   Widget build(BuildContext context){
     return BlocBuilder <LoginCubit,LoginStates>(
@@ -32,7 +36,7 @@ class SettingsScreen extends StatelessWidget{
                     borderRadius: BorderRadius.circular(15),
                   ),
                   child: ExpansionTile(
-                    title: defaultText(
+                    title: DefaultText(
                       title: "addProducts".tr().toString(),
                     ),
                     leading: const Icon(Icons.add),
@@ -41,7 +45,7 @@ class SettingsScreen extends StatelessWidget{
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          defaultTextFormField(
+                          DefaultTextFormField(
                             type: TextInputType.text,
                             controller: nameController,
                             hint: "productName".tr().toString(),
@@ -60,7 +64,7 @@ class SettingsScreen extends StatelessWidget{
                             colorBorderFocus: Colors.red,
                           ),
                           const SizedBox(height: 15,),
-                          defaultTextFormField(
+                          DefaultTextFormField(
                             type: TextInputType.text,
                             controller: descriptionController,
                             hint:"productDescription".tr().toString(),
@@ -73,7 +77,7 @@ class SettingsScreen extends StatelessWidget{
                             colorBorderFocus: Colors.red,
                           ),
                           const SizedBox(height: 15,),
-                          defaultTextFormField(
+                          DefaultTextFormField(
                             type: TextInputType.text,
                             controller: priceController,
                             hint: "productPrice".tr().toString(),
@@ -95,14 +99,14 @@ class SettingsScreen extends StatelessWidget{
                           Row(
                             children: [
                               Expanded(
-                                child: defaultButton(
+                                child: DefaultButton(
                                   text: "addImage".tr().toString(),
                                   size: 18,
                                 ),
                               ),
                               const SizedBox(width: 15,),
                               Expanded(
-                                child: defaultButton(
+                                child: DefaultButton(
                                   text: "save".tr(),
                                   size: 18,
                                 ),
@@ -121,8 +125,8 @@ class SettingsScreen extends StatelessWidget{
                     borderRadius: BorderRadius.circular(15),
                   ),
                   child: ExpansionTile(
-                    title: defaultText(
-                      title: 'إضافة الاكواد',
+                    title: DefaultText(
+                      title: "addCodes".tr().toString(),
                     ),
                     leading: const Icon(Icons.add),
                     childrenPadding: const EdgeInsets.all(15),
@@ -132,9 +136,9 @@ class SettingsScreen extends StatelessWidget{
                         children: [
                           Row(
                             children: [
-                              Expanded(child: defaultText(title: 'عدد الاكواد', size: 18)),
+                              Expanded(child: DefaultText(title: "numberOfCodes".tr().toString(), size: 18)),
                               Expanded(
-                                child: defaultTextFormField(
+                                child: DefaultTextFormField(
                                   colorBorderFocus: Colors.red,
                                   colorBorderEnabled: Colors.grey,
                                   radius: 15,
@@ -148,9 +152,9 @@ class SettingsScreen extends StatelessWidget{
                           const SizedBox(height: 10,),
                           Row(
                             children: [
-                              Expanded(child: defaultText(title: 'اسم الكارت', size: 18)),
+                              Expanded(child: DefaultText(title: "cardName".tr().toString(), size: 18)),
                               Expanded(
-                                child: defaultTextFormField(
+                                child: DefaultTextFormField(
                                   colorBorderFocus: Colors.red,
                                   colorBorderEnabled: Colors.grey,
                                   radius: 15,
@@ -163,9 +167,9 @@ class SettingsScreen extends StatelessWidget{
                           const SizedBox(height: 10,),
                           Row(
                             children: [
-                              Expanded(child: defaultText(title: 'كود الكارت', size: 18)),
+                              Expanded(child: DefaultText(title: "cardCode".tr().toString(), size: 18)),
                               Expanded(
-                                child: defaultTextFormField(
+                                child: DefaultTextFormField(
                                   colorBorderFocus: Colors.red,
                                   colorBorderEnabled: Colors.grey,
                                   radius: 15,
@@ -178,9 +182,9 @@ class SettingsScreen extends StatelessWidget{
                           const SizedBox(height: 10,),
                           Row(
                             children: [
-                              Expanded(child: defaultText(title: 'عدد نقاط الكارت', size: 18)),
+                              Expanded(child: DefaultText(title: "cardPoints".tr().toString(), size: 18)),
                               Expanded(
-                                child: defaultTextFormField(
+                                child: DefaultTextFormField(
                                   colorBorderFocus: Colors.red,
                                   colorBorderEnabled: Colors.grey,
                                   radius: 15,
@@ -194,15 +198,15 @@ class SettingsScreen extends StatelessWidget{
                           Row(
                             children: [
                               Expanded(
-                                child: defaultButton(
-                                  text: 'إنشاء الاكواد',
+                                child: DefaultButton(
+                                  text: "createCards".tr().toString(),
                                   size: 18,
                                 ),
                               ),
                               const SizedBox(width: 15,),
                               Expanded(
-                                child: defaultButton(
-                                  text: 'حفظ',
+                                child: DefaultButton(
+                                  text: "cardButton".tr().toString(),
                                   size: 18,
                                 ),
                               ),
@@ -220,7 +224,7 @@ class SettingsScreen extends StatelessWidget{
                     borderRadius: BorderRadius.circular(15),
                   ),
                   child: ExpansionTile(
-                    title: defaultText(
+                    title: DefaultText(
                       title: "language".tr().toString(),
                     ),
                     leading: const Icon(Icons.language),
@@ -229,18 +233,18 @@ class SettingsScreen extends StatelessWidget{
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           ListTile(
-                            leading: defaultText(title: "arabic".tr().toString()),
+                            leading: DefaultText(title: "arabic".tr().toString()),
                             onTap: (){
                               context.setLocale(const Locale('ar'));
-                              loginCubit.isEnglish = false;
+                              //loginCubit.isEnglish = false;
                             },
                           ),
                           const SizedBox(height: 15,),
                           ListTile(
-                            leading: defaultText(title: "English".tr().toString()),
+                            leading: DefaultText(title: "English".tr().toString()),
                             onTap: (){
                               context.setLocale(const Locale('en'));
-                              loginCubit.isEnglish = true ;
+                              //loginCubit.isEnglish = true ;
                             },
                           ),
                         ],

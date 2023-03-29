@@ -1,5 +1,10 @@
 import 'package:alipro/modules/register_screen/register_screen.dart';
 import 'package:alipro/shared/components/component.dart';
+import 'package:alipro/shared/components/widgets/appbar.dart';
+import 'package:alipro/shared/components/widgets/button.dart';
+import 'package:alipro/shared/components/widgets/text.dart';
+import 'package:alipro/shared/components/widgets/text_button.dart';
+import 'package:alipro/shared/components/widgets/text_form_field.dart';
 import 'package:flutter/material.dart';
 
 import '../../layouts/home_layout/home_layout.dart';
@@ -7,6 +12,8 @@ import '../../layouts/home_layout/home_layout.dart';
 class ActivationScreen extends StatelessWidget{
   static String id = 'ActivationScreen';
   var formKey = GlobalKey <FormState> ();
+
+  ActivationScreen({super.key});
   @override
   Widget build (BuildContext context){
     return Directionality(
@@ -14,7 +21,7 @@ class ActivationScreen extends StatelessWidget{
       child: Scaffold(
         appBar: AppBar(
           automaticallyImplyLeading: false,
-          title: defaultAppBar(),
+          title: DefaultAppbar(),
         ),
         body: Center(
           child: SingleChildScrollView(
@@ -26,19 +33,19 @@ class ActivationScreen extends StatelessWidget{
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    defaultText(
+                    DefaultText(
                       title: 'لقد ارسلنا اليك رسالة نصية تحتوى على الكود',
                       size: 20,
                       align: TextAlign.start
                     ),
                     const SizedBox(height: 10,),
-                    defaultText(
+                    DefaultText(
                       title: RegisterScreen.phoneNumber ?? 'No Number yet',
                       color: Colors.black,
                       size: 22,
                     ),
                     const SizedBox(height: 5,),
-                    defaultTextButton(
+                    DefaultTextButton(
                       text: 'تعديل',
                       color: Colors.red,
                       press: (){
@@ -49,14 +56,14 @@ class ActivationScreen extends StatelessWidget{
                       textLine: TextDecoration.underline
                     ),
                     const SizedBox(height: 5,),
-                    defaultText(
+                    DefaultText(
                         title: 'ادخل الرمز المرسل',
                         size: 20,
                         align: TextAlign.start
                     ),
                     const SizedBox(height: 10,),
                     Center(
-                      child: defaultTextFormField(
+                      child: DefaultTextFormField(
                         containerWidth: 150,
                         radius: 20,
                         colorBorderEnabled: Colors.grey,
@@ -69,14 +76,14 @@ class ActivationScreen extends StatelessWidget{
                     ),
                     const SizedBox(height: 20,),
                     Center(
-                      child: defaultText(
+                      child: DefaultText(
                           title: 'إن لم تتلقي الرسالة',
                           size: 20,
                       ),
                     ),
                     const SizedBox(height: 5,),
                     Center(
-                      child: defaultTextButton(
+                      child: DefaultTextButton(
                           text: 'إعادة إرسال',
                           color: Colors.red,
                           press: (){},
@@ -87,7 +94,7 @@ class ActivationScreen extends StatelessWidget{
                     ),
                     const SizedBox(height: 15,),
                     Center(
-                      child: defaultButton(
+                      child: DefaultButton(
                         text: 'موافق',
                         width: 180,
                         radius: 25,

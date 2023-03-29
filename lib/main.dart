@@ -74,7 +74,7 @@ class MyApp extends StatelessWidget{
           SettingsScreen.id : (context) => SettingsScreen(),
           UsersScreen.id : (context) => UsersScreen(),
           HomeScreen.id : (context) => HomeScreen(),
-          AddProduct.id : (context) => AddProduct(),
+          // AddProduct.id : (context) => AddProduct(),
           CreateCodesScreen.id : (context) => CreateCodesScreen(),
           SplashScreen.id : (context) => SplashScreen(),
         },

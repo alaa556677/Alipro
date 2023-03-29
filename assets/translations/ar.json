@@ -23,5 +23,12 @@
   "productPrice" : "سعر المنتج",
   "validateProductPrice" : "يجب إدخال سعر المنتج",
   "addImage" : "إضافة صورة",
-  "save" : "حفظ"
+  "save" : "حفظ",
+  "addCodes" : "إضافة الأكواد",
+  "numberOfCodes" : "عدد الأكواد",
+  "cardName" : "اسم الكارت",
+  "cardCode" : "كود الكارت",
+  "cardPoints" : "عدد نقاط الكارت",
+  "createCards" : "إنشاء الاكواد",
+  "cardButton" : "حفظ"
 }
