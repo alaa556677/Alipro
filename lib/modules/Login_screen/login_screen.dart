@@ -1,12 +1,13 @@
 import 'package:alipro/layouts/home_layout/home_layout.dart';
+import 'package:alipro/modules/product_screen/product_screen.dart';
 import 'package:alipro/modules/register_screen/register_screen.dart';
 import 'package:alipro/shared/components/component.dart';
 import 'package:alipro/shared/cubit/login/login_cubit.dart';
 import 'package:alipro/shared/cubit/login/login_states.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
-
 import '../../shared/components/constants.dart';
 
 class LoginScreen extends StatelessWidget{
@@ -16,6 +17,7 @@ class LoginScreen extends StatelessWidget{
   TextEditingController phoneController = TextEditingController();
   String initialCountry = 'EG';
   PhoneNumber number = PhoneNumber(isoCode: 'EG');
+  LoginScreen({super.key});
   @override
   Widget build (BuildContext context){
     return BlocConsumer <LoginCubit,LoginStates> (
@@ -37,16 +39,16 @@ class LoginScreen extends StatelessWidget{
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       defaultText(
-                        title: 'الاسم',
+                        title: "name".tr().toString(),
                       ),
                       const SizedBox(height: 10,),
                       defaultTextFormField(
                         type: TextInputType.text,
                         controller: nameController,
-                        hint: 'ادخل الاسم',
+                        hint: "hintName".tr().toString(),
                         validate: (value){
                           if(value.isEmpty){
-                            return 'يجب كتابة الاسم';
+                            return "validateName".tr().toString();
                           }
                           return null;
                         },
@@ -60,7 +62,7 @@ class LoginScreen extends StatelessWidget{
                       ),
                       const SizedBox(height: 20,),
                       defaultText(
-                        title: 'رقم الموبايل',
+                        title: "phone".tr().toString(),
                       ),
                       const SizedBox(height: 10,),
                       defaultPhoneNumber(
@@ -72,12 +74,17 @@ class LoginScreen extends StatelessWidget{
                       const SizedBox(height: 60,),
                       Center(
                         child: defaultButton(
-                          text: 'موافق',
+                          text:  "buttonLogin".tr().toString(),
                           width: 180,
                           radius: 25,
                           size: 20,
                           color: Colors.grey,
-                          press: (){},
+                          press: (){
+                            Navigator.pushNamed(
+                                context,
+                                HomeScreen.id
+                            );
+                          },
                         ),
                       ),
                       const SizedBox(height: 20,),
@@ -85,12 +92,12 @@ class LoginScreen extends StatelessWidget{
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           defaultText(
-                            title: 'لا تمتلك حساب ؟',
+                            title:  "isHaveAccount".tr().toString(),
                             size: 20
                           ),
                           const SizedBox(width: 10,),
                           defaultTextButton(
-                            text: 'سجل الان',
+                            text:  "register".tr().toString(),
                             size: 20,
                             color: Colors.red,
                             press: (){

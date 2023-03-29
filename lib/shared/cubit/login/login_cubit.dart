@@ -5,9 +5,5 @@ import 'package:flutter/material.dart';
 class LoginCubit extends Cubit <LoginStates>{
   LoginCubit() : super(InitialHomeStates());
   static LoginCubit get (context) => BlocProvider.of(context);
-
-
-
-
-
+  bool isEnglish = false ;
 }

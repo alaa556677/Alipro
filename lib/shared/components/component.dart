@@ -1,3 +1,4 @@
+import 'package:alipro/shared/cubit/login/login_cubit.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
@@ -170,7 +171,7 @@ Widget defaultPhoneNumber({
               textFieldController: controller,
               validator: (value) {
                 if (value!.isEmpty) {
-                  return 'يجب ادخال رقم الموبايل';
+                  return  "validatePhone".tr().toString();
                 }
                 return null;
               },
@@ -183,7 +184,7 @@ Widget defaultPhoneNumber({
               inputDecoration: InputDecoration(
                   contentPadding: EdgeInsets.symmetric(horizontal: horizontal, vertical: vertical),
                   border: InputBorder.none,
-                  hintText: 'ادخل رقم الموبايل',
+                  hintText: "hintPhone".tr().toString(),
                   hintStyle: const TextStyle(
                     fontSize: 20,
                     color: Colors.grey,
@@ -191,7 +192,7 @@ Widget defaultPhoneNumber({
 
             ),
             Positioned(
-                right: 105,
+                right:105,
                 top: 8,
                 bottom: 8,
                 child: Container(

@@ -43,18 +43,11 @@ dependencies:
   easy_localization: ^3.0.1
   hexcolor: ^3.0.1
 
-flutter_native_splash:
-  color: '#FF0000'
-  image: assets/images/splash.png
-  ios: true
-
-
 flutter_icons:
   android: "launcher_icon"
   ios: true
   image_path: "assets/images/icon.png"
   min_sdk_android: 21
-
 
 dev_dependencies:
   flutter_test:

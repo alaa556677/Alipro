@@ -1,8 +1,27 @@
 {
   "nameProject" : "Alipro" ,
   "name": "Name" ,
-  "phone" : "Phone Number" ,
+  "validateName" : "required" ,
   "hintName" : "Enter your name" ,
-  "hintPhone" : "Enter your phone"
+  "phone" : "Phone Number" ,
+  "hintPhone" : "Enter your phone",
+  "validatePhone" : "required",
+  "buttonLogin" : "Accept",
+  "isHaveAccount" : "Have account?",
+  "language" : "Language",
+  "arabic" : "Arabic",
+  "English" : "English",
+  "products" : "Products",
+  "users" : "Users",
+  "codes" : "Codes",
+  "settings" : "Settings",
+  "addProducts" : "Add product",
+  "productName" : "Product Name",
+  "validateProductName" : "required",
+  "productDescription" : "Description",
+  "productPrice" : "Product Price",
+  "validateProductPrice" : "required",
+  "addImage" : "Add Image",
+  "save" : "Save"
 }
 

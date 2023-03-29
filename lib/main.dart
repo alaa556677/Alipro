@@ -3,6 +3,7 @@ import 'package:alipro/modules/activation_code/activation_code.dart';
 import 'package:alipro/modules/codes_screen/codes_screen.dart';
 import 'package:alipro/modules/create_codes/create_codes.dart';
 import 'package:alipro/modules/product_screen/product_screen.dart';
+import 'package:alipro/modules/splash_screen/splash_Screen.dart';
 import 'package:alipro/shared/cubit/home/home_cubit.dart';
 import 'package:alipro/shared/cubit/login/login_cubit.dart';
 import 'package:alipro/shared/cubit/register/register_cubit.dart';
@@ -75,8 +76,9 @@ class MyApp extends StatelessWidget{
           HomeScreen.id : (context) => HomeScreen(),
           AddProduct.id : (context) => AddProduct(),
           CreateCodesScreen.id : (context) => CreateCodesScreen(),
+          SplashScreen.id : (context) => SplashScreen(),
         },
-        initialRoute: LoginScreen.id,
+        initialRoute: SplashScreen.id,
       )
     );
   }
