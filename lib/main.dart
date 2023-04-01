@@ -16,10 +16,15 @@ import 'modules/add_product/add_product.dart';
 import 'modules/register_screen/register_screen.dart';
 import 'modules/settings_screen/settings_screen.dart';
 import 'modules/users_screen/users_screen.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform
+  );
   runApp(EasyLocalization(
       supportedLocales: const [
         Locale('en'),

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "312794782466",
+    "project_id": "alipro-29dec",
+    "storage_bucket": "alipro-29dec.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:312794782466:android:3088cb11c2c5ea5b11001b",
+        "android_client_info": {
+          "package_name": "com.example.alipro"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "312794782466-v56if0eiqunlsv6mp1p1dapl9bi3pj0l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCnYfIGPnT7TDQtcQA4LW2lkAEKp9_Rjtk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "312794782466-v56if0eiqunlsv6mp1p1dapl9bi3pj0l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
